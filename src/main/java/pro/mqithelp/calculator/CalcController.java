@@ -10,7 +10,7 @@ public class CalcController {
 
     private final CalculatorService calculator;
 
-    public CalcController(Calculator calculator) {
+    public CalcController(CalculatorService calculator) {
         this.calculator = calculator;
     }
 
@@ -20,22 +20,22 @@ public class CalcController {
     }
 
     @GetMapping("/calculator/plus")
-    public String calculatorPlus(@RequestParam("num1") String num1, @RequestParam("num2") String num2) {
+    public String calculatorPlus(@RequestParam("num1") Integer num1, @RequestParam("num2") Integer num2) {
         return calculator.plus(num1, num2);
     }
 
     @GetMapping("/calculator/minus")
-    public String calculatorMinus(@RequestParam("num1") String num1, @RequestParam("num2") String num2) {
+    public String calculatorMinus(@RequestParam("num1") Integer num1, @RequestParam("num2") Integer num2) {
         return calculator.minus(num1, num2);
     }
 
     @GetMapping("/calculator/multiply")
-    public String calculatorMultiply(@RequestParam("num1") String num1, @RequestParam("num2") String num2) {
+    public String calculatorMultiply(@RequestParam("num1") Integer num1, @RequestParam("num2") Integer num2) {
         return calculator.multiply(num1, num2);
     }
 
     @GetMapping("/calculator/divide")
-    public String calculatorDivide(@RequestParam("num1") String num1, @RequestParam("num2") String num2) {
+    public String calculatorDivide(@RequestParam("num1") Integer num1, @RequestParam("num2") Integer num2) {
         return calculator.divide(num1, num2);
     }
 
